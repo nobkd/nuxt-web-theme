@@ -1,5 +1,6 @@
 {
     "private": true,
+    "name": "nuxt-web-theme",
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
