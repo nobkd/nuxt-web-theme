@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     typescript: {
         includeWorkspace: true,
     },
-  
+
     app: {
         head: {
             titleTemplate: '%s | Website Name',
