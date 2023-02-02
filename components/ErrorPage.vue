@@ -9,7 +9,7 @@ const { error } = defineProps({
 });
 
 useHead({
-    title: `Fehler ${error}`,
+    title: `Error ${error}`,
 });
 </script>
 
@@ -17,7 +17,7 @@ useHead({
     <div class="errorpage">
         <p class="error">{{ error }}</p>
         <p class="message">{{ message }}</p>
-        <NuxtLink to="/">Startseite</NuxtLink>
+        <NuxtLink to="/">Home</NuxtLink>
     </div>
 </template>
 
@@ -42,15 +42,15 @@ useHead({
 
     font-size: 40vmin
 
-    color: var(--primary)
-    text-shadow: 2vmin  2vmin 0 var(--tertiary)
+    color: var(--color-primary-500)
+    text-shadow: 2vmin  2vmin 0 var(--color-primary-800)
 
 a
     padding: 0.75rem 1rem
     border-radius: var(--radii-lg)
 
     text-decoration: none
-    background-color: var(--secondary)
+    background-color: var(--color-primary-500)
     color: white
 
     &:hover, &:active, &:focus

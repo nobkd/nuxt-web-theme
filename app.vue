@@ -253,11 +253,7 @@ h1, h2, h3, h4, h5, h6
     --inset-shadow: rgba(0, 0, 0, var(--opacity-bright)) 0 2px 4px 0 inset
     --shadow: 0 0 0.1rem grey
     --text-shadow: 0 0 1px var(--text)
-
-    --primary: #00a3b9
-    --secondary: #0e6cc4
-    --tertiary: #0b4293
-
+    
     --text: black
     --bg: white
 

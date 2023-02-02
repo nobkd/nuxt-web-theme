@@ -1,3 +1,3 @@
 <template>
-    <ErrorPage error="404" :message="`'${useRoute().path}' wurde nicht gefunden`" />
+    <ErrorPage error="404" :message="`'${useRoute().path}' not found`" />
 </template>
