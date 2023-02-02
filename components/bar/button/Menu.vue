@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <button aria-label="Navigation schließen">
+    <button :aria-label="`${toClose ? 'Close' : 'Open'} navigation`">
         <IconClose height="24" v-if="toClose" />
         <IconMenu height="24" v-else />
     </button>

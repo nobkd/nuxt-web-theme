@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink to="/" aria-label="Logo zur Startseite">
+    <NuxtLink to="/" aria-label="Logo to index">
         <IconLogo height="24" />
     </NuxtLink>
 </template>
