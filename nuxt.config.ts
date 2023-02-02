@@ -20,8 +20,6 @@ export default defineNuxtConfig({
         },
     },
 
-    css: ['@/assets/vars.sass', '@/assets/default.sass'],
-
     content: {
         documentDriven: true,
         highlight: false,
