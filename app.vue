@@ -170,7 +170,7 @@ img, video {
 .dark ::selection {
   background: #444;
 }
-div {
+div[column=""] { /*added `[column=""]`, to prevent auto flexing*/
   display: flex;
   flex-direction: column;
 }
