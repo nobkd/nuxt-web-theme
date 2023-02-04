@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
     content: {
         documentDriven: true,
-        highlight: false,
+        highlight: true,
     },
 
     typescript: {
