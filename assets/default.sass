@@ -1,0 +1,52 @@
+html
+  scroll-behavior: smooth
+
+h1, h2, h3, h4, h5, h6
+  &::before
+    // Fixes that active anchor links dont scroll behind header
+    content: ""
+    display: block
+    height: calc(1rem + var(--header-height))
+    margin-top: calc(-1rem - var(--header-height))
+
+  a
+    display: block
+
+#__nuxt
+  background-color: var(--bg)
+  color: var(--text)
+  width: calc(100vw - (100vw - 100%))
+  min-height: 100vh
+
+  display: grid
+  grid-auto-flow: row
+  grid-template-rows: auto 1fr auto
+
+  .document-driven-page
+    width: 100%
+    height: 100%
+
+@media (prefers-color-scheme: dark)
+  *
+    color-scheme: dark
+
+  ::-moz-selection
+    background: #444
+
+  ::selection
+    background: #444
+
+@media print
+  *
+    background-color: transparent
+
+  header, nav, footer
+    display: none
+
+  h1, h2, h3, h4, h5, h6
+    svg.icon
+      display: none
+
+  :not(h1, h2, h3, h4, h5, h6) > a::after
+    content: " [" attr(href) "] "
+    font-size: 0.7rem

@@ -1,3 +1,6 @@
+import { createResolver } from '@nuxt/kit';
+const { resolve } = createResolver(import.meta.url);
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     extends: '@nuxt-themes/typography',
@@ -5,6 +8,12 @@ export default defineNuxtConfig({
     modules: ['@nuxt/content'],
 
     ssr: true,
+
+    css: [
+        resolve('./assets/reset.css'),
+        resolve('./assets/vars.sass'),
+        resolve('./assets/default.sass'),
+    ],
 
     app: {
         head: {
