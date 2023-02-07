@@ -10,6 +10,7 @@
 main
     margin: 0 auto
     padding: var(--padding-main)
+    min-width: 0
     width: 100%
     max-width: var(--content-width)
     hyphens: auto
