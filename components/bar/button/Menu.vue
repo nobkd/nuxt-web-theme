@@ -9,8 +9,8 @@ defineProps({
 
 <template>
     <button :aria-label="`${toClose ? 'Close' : 'Open'} navigation`">
-        <IconClose height="24" v-if="toClose" />
-        <IconMenu height="24" v-else />
+        <Icon name="mingcute:close-fill" size="24px" v-if="toClose" />
+        <Icon name="mingcute:menu-fill" size="24px" v-else />
     </button>
 </template>
 

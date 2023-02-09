@@ -33,8 +33,6 @@ export default defineNuxtConfig({
         highlight: true,
     },
 
-    nuxtIcon: { size: '24px' },
-
     typescript: {
         shim: false,
         strict: true,
