@@ -5,7 +5,7 @@ const { resolve } = createResolver(import.meta.url);
 export default defineNuxtConfig({
     extends: ['@nuxt-themes/typography', '@nuxt-themes/elements'],
 
-    modules: ['@nuxt/content'],
+    modules: ['@nuxt/content', '@nuxt/devtools'],
 
     ssr: true,
 
@@ -32,6 +32,8 @@ export default defineNuxtConfig({
         documentDriven: true,
         highlight: true,
     },
+
+    nuxtIcon: { size: '24px' },
 
     typescript: {
         shim: false,
