@@ -1,5 +1,5 @@
 <template>
-    <NuxtLoadingIndicator color="var(--color-primary-500)" />
+    <NuxtLoadingIndicator color="var(--color-primary-500)" style="opacity: 1;" />
     <BarHeader />
     <main>
         <NuxtPage />
