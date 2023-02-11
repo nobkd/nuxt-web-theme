@@ -5,8 +5,6 @@ function menu(menuOpen: Boolean) {
     document.documentElement.style.overflowY = menuOpen ? 'hidden' : 'initial';
 }
 
-const header = queryContent().where({ header: { $not: false } });
-
 // TODO: lock tabbing to open menu
 // TODO: Esc event listener, currently only works, if focus(!) is within open pane
 </script>
@@ -24,17 +22,7 @@ const header = queryContent().where({ header: { $not: false } });
                     <BarButtonLogo @click="menu((menuOpen = !menuOpen))" />
                 </div>
 
-                <ContentNavigation v-slot="{ navigation }" :query="header">
-                    <ul>
-                        <li v-for="link of navigation" :key="link._path">
-                            <NuxtLink
-                                :to="link._path"
-                                @click="menu((menuOpen = !menuOpen))"
-                                >{{ link.title }}</NuxtLink
-                            >
-                        </li>
-                    </ul>
-                </ContentNavigation>
+                <BarNavItems :clickFunction="() => menu((menuOpen = !menuOpen))" />
             </div>
         </nav>
     </Teleport>
@@ -92,28 +80,4 @@ ul
     list-style: none
     margin: 0
     padding: 0
-
-    color: var(--header-text)
-    font-size: var(--fontSize-md)
-    font-weight: var(--font-weight-semibold)
-
-    a
-        display: flex
-        align-items: center
-
-        margin-top: 0.5rem
-        padding: 0.5rem 1rem
-
-        border-radius: var(--radii-md)
-        outline: none
-        transition: var(--transition-text), var(--transition-bg)
-
-        &:hover, &:active, &:focus
-            background-color: var(--header-border)
-            color: var(--text)
-
-        &.router-link-active
-            text-shadow: var(--text-shadow)
-            box-shadow: var(--inset-shadow)
-            background-color: var(--header-border)
 </style>
