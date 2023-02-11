@@ -43,7 +43,7 @@ useHead({
     font-size: 40vmin
 
     color: var(--color-primary-500)
-    text-shadow: 2vmin  2vmin 0 var(--color-primary-800)
+    text-shadow: 2vmin  2vmin 0.1rem var(--color-primary-800)
 
 a
     padding: 0.75rem 1rem
@@ -54,6 +54,6 @@ a
     color: white
 
     &:hover, &:active, &:focus
-        box-shadow: 0.1rem 0.1rem 0.25rem grey
+        box-shadow: 0.25rem 0.25rem 0.1rem var(--color-primary-800)
         text-shadow: var(--text-shadow)
 </style>

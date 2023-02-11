@@ -10,9 +10,11 @@ const header = queryContent().where({ header: { $not: false } });
     <ContentNavigation v-slot="{ navigation }" :query="header">
         <ul>
             <li v-for="link of navigation" :key="link._path">
-                <NuxtLink :to="link._path" @click="clickFunction ? clickFunction() : null">{{
-                    link.title
-                }}</NuxtLink>
+                <NuxtLink
+                    :to="link._path"
+                    @click="clickFunction ? clickFunction() : null">
+                    {{ link.title }}
+                </NuxtLink>
             </li>
         </ul>
     </ContentNavigation>

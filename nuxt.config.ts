@@ -30,7 +30,12 @@ export default defineNuxtConfig({
 
     content: {
         documentDriven: true,
-        highlight: true,
+        highlight: {
+            theme: {
+                default: 'light-plus',
+                dark: 'dark-plus',
+            },
+        },
     },
 
     typescript: {
