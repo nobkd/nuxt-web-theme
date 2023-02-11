@@ -22,7 +22,7 @@ function menu(menuOpen: Boolean) {
                     <BarButtonLogo @click="menu((menuOpen = !menuOpen))" />
                 </div>
 
-                <BarNavItems :clickFunction="() => menu((menuOpen = !menuOpen))" />
+                <BarNavItemsSide :clickFunction="() => menu((menuOpen = !menuOpen))" />
             </div>
         </nav>
     </Teleport>

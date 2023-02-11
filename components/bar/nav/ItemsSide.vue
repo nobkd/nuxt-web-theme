@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+defineProps({
+    clickFunction: Function,
+});
+
 const header = queryContent().where({ header: { $not: false } });
 </script>
 
@@ -6,7 +10,11 @@ const header = queryContent().where({ header: { $not: false } });
     <ContentNavigation v-slot="{ navigation }" :query="header">
         <ul>
             <li v-for="link of navigation" :key="link._path">
-                <NuxtLink :to="link._path">{{ link.title }}</NuxtLink>
+                <NuxtLink
+                    :to="link._path"
+                    @click="clickFunction ? clickFunction() : null">
+                    {{ link.title }}
+                </NuxtLink>
             </li>
         </ul>
     </ContentNavigation>
@@ -18,28 +26,15 @@ ul
     margin: 0
     padding: 0 1rem
 
-    display: flex
-    align-items: center
-    justify-content: center
-    overflow: hidden
-    text-overflow: ellipsis
-    white-space: nowrap
-
     color: var(--header-text)
     font-size: var(--fontSize-md)
     font-weight: var(--font-weight-semibold)
-
-    & > li + li
-        margin-left: 0.5rem
-
-    li
-        display: inline-flex
-        gap: 0.25rem
 
     a
         display: flex
         align-items: center
 
+        margin-top: 0.5rem
         padding: 0.5rem 1rem
 
         border-radius: var(--radii-md)
