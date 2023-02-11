@@ -5,7 +5,7 @@ const { resolve } = createResolver(import.meta.url);
 export default defineNuxtConfig({
     extends: ['@nuxt-themes/typography', '@nuxt-themes/elements'],
 
-    modules: ['@nuxt/content', '@nuxt/devtools'],
+    modules: ['@nuxt/content'],
 
     ssr: true,
 
