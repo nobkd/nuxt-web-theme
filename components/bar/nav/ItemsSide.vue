@@ -12,7 +12,7 @@ const header = queryContent().where({ header: { $not: false } });
             <li v-for="link of navigation" :key="link._path">
                 <NuxtLink
                     :to="link._path"
-                    @click="clickFunction ? clickFunction() : null">
+                    @click="clickFunction!()">
                     {{ link.title }}
                 </NuxtLink>
             </li>

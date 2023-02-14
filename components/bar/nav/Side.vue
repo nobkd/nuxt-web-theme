@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-const menuOpen = ref(false);
+const sideNavOpen = ref(false);
 
-function menu(menuOpen: Boolean) {
-    document.documentElement.style.overflowY = menuOpen ? 'hidden' : 'initial';
+function menu() {
+    sideNavOpen.value = !sideNavOpen.value;
+    document.documentElement.style.overflowY = sideNavOpen.value ? 'hidden' : 'initial';
+    //if (menuOpen.value) {document.getElementById('side-nav')!}
 }
 
 // TODO: lock tabbing to open menu
@@ -10,19 +12,17 @@ function menu(menuOpen: Boolean) {
 </script>
 
 <template>
-    <BarButtonMenu :toClose="menuOpen" @click="menu((menuOpen = !menuOpen))" />
+    <BarButtonMenu :toClose="sideNavOpen" @click="menu" />
 
     <Teleport to="body">
-        <nav v-if="menuOpen" @keyup.esc="menu((menuOpen = !menuOpen))">
+        <nav v-if="sideNavOpen" @keyup.esc="menu" @click.self="menu" id="side-nav">
             <div class="container">
                 <div>
-                    <BarButtonMenu
-                        :toClose="menuOpen"
-                        @click="menu((menuOpen = !menuOpen))" />
-                    <BarButtonLogo @click="menu((menuOpen = !menuOpen))" />
+                    <BarButtonMenu :toClose="sideNavOpen" @click="menu" />
+                    <BarButtonLogo @click="menu" />
                 </div>
 
-                <BarNavItemsSide :clickFunction="() => menu((menuOpen = !menuOpen))" />
+                <BarNavItemsSide :clickFunction="menu" />
             </div>
         </nav>
     </Teleport>
