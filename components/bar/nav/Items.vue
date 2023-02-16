@@ -17,7 +17,12 @@ const header = queryContent().where({ header: { $not: false } });
     <ContentNavigation v-slot="{ navigation }" :query="header">
         <ul :side="isSide">
             <li v-for="link of navigation" :key="link._path">
-                <NuxtLink :to="link._path" @click="linkClick()">
+                <NuxtLink
+                    :to="link._path"
+                    @click="
+                        linkClick();
+                        $event.target.blur();
+                    ">
                     {{ link.title }}
                 </NuxtLink>
             </li>
