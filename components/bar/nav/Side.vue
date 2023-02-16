@@ -4,18 +4,17 @@ const sideNavOpen = ref(false);
 function menu() {
     sideNavOpen.value = !sideNavOpen.value;
     document.documentElement.style.overflowY = sideNavOpen.value ? 'hidden' : 'initial';
-    //if (menuOpen.value) {document.getElementById('side-nav')!}
-}
 
-// TODO: lock tabbing to open menu
-// TODO: Esc event listener, currently only works, if focus(!) is within open pane
+    // TODO: lock tabbing to open menu
+    // TODO: Esc event listener, currently only works, if focus(!) is within open pane
+}
 </script>
 
 <template>
     <BarButtonMenu :toClose="sideNavOpen" @click="menu" />
 
     <Teleport to="body">
-        <nav :open="sideNavOpen" @keyup.esc="menu" @click.self="menu" id="side-nav">
+        <nav :open="sideNavOpen" @keyup.esc="menu" @click.self="menu">
             <div class="container">
                 <div>
                     <BarButtonMenu :toClose="sideNavOpen" @click="menu" />
