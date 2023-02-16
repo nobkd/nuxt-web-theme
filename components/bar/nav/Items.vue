@@ -1,12 +1,25 @@
 <script lang="ts" setup>
+defineProps({
+    linkClick: {
+        type: Function,
+        default: () => {},
+    },
+    isSide: {
+        type: Boolean,
+        default: false,
+    },
+});
+
 const header = queryContent().where({ header: { $not: false } });
 </script>
 
 <template>
     <ContentNavigation v-slot="{ navigation }" :query="header">
-        <ul>
+        <ul :side="isSide">
             <li v-for="link of navigation" :key="link._path">
-                <NuxtLink :to="link._path">{{ link.title }}</NuxtLink>
+                <NuxtLink :to="link._path" @click="linkClick()">
+                    {{ link.title }}
+                </NuxtLink>
             </li>
         </ul>
     </ContentNavigation>
@@ -14,32 +27,31 @@ const header = queryContent().where({ header: { $not: false } });
 
 <style lang="sass" scoped>
 ul
-    list-style: none
-    margin: 0
-    padding: 0 1rem
-
     display: flex
+    flex-direction: column
     align-items: center
     justify-content: center
+    gap: 0.5rem
+
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
+
+    list-style: none
+    width: 100%
+    margin: 0
+    padding: var(--padding)
 
     color: var(--header-text)
     font-size: var(--fontSize-md)
     font-weight: var(--font-weight-semibold)
 
-    & > li + li
-        margin-left: 0.5rem
-
-    li
+    li, a
         display: inline-flex
-        gap: 0.25rem
+        align-items: center
+        width: 100%
 
     a
-        display: flex
-        align-items: center
-
         padding: 0.5rem 1rem
 
         border-radius: var(--radii-md)
@@ -57,4 +69,9 @@ ul
             text-shadow: var(--text-shadow)
             box-shadow: var(--inset-shadow)
             background-color: var(--header-border)
+
+ul[side="false"]
+    flex-direction: row
+    li, a
+        justify-content: center
 </style>

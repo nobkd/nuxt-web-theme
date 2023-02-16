@@ -15,14 +15,14 @@ function menu() {
     <BarButtonMenu :toClose="sideNavOpen" @click="menu" />
 
     <Teleport to="body">
-        <nav v-if="sideNavOpen" @keyup.esc="menu" @click.self="menu" id="side-nav">
+        <nav :open="sideNavOpen" @keyup.esc="menu" @click.self="menu" id="side-nav">
             <div class="container">
                 <div>
                     <BarButtonMenu :toClose="sideNavOpen" @click="menu" />
                     <BarButtonLogo @click="menu" />
                 </div>
 
-                <BarNavItemsSide :clickFunction="menu" />
+                <BarNavItems :linkClick="menu" :isSide="true" />
             </div>
         </nav>
     </Teleport>
@@ -30,6 +30,11 @@ function menu() {
 
 <style lang="sass" scoped>
 nav
+    display: none
+
+    &[open="true"]
+        display: flex
+
     animation: menu-bg var(--anim-props)
 
     position: fixed
@@ -43,7 +48,6 @@ nav
     color: var(--header-text)
 
     overflow-y: auto
-    display: flex
     align-items: flex-start
 
 .container
@@ -56,9 +60,6 @@ nav
     background-color: var(--bg)
     box-shadow: var(--shadow)
 
-    & > *
-        padding: 0 1rem
-
     div
         display: flex
         align-items: center
@@ -67,6 +68,7 @@ nav
         height: var(--header-height)
         width: 100%
         padding: var(--padding)
+        margin-bottom: 0.5rem
 
         position: sticky
         top: 0
