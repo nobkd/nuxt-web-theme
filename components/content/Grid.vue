@@ -14,5 +14,5 @@ div
     margin: 0.25rem 0
 
     @media (min-width: 475px)
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: repeat(auto-fit, minmax(35%, 1fr))
 </style>
