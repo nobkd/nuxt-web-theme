@@ -34,6 +34,8 @@ img
     border-radius: 100%
     height: 4rem
     width: 4rem
+    object-fit: cover
+    //object-position: bottom // top // none
 
 .name
     font-weight: bold
