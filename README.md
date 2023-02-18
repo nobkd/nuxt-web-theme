@@ -48,6 +48,6 @@ Only the primary have to be changed in the [`tokens.config.ts`](./tokens.config.
 
 **Component Reference:**
 
-- https://typography.nuxt.space/#prose-components
-- https://elements.nuxt.space/globals/alert/
-- https://github.com/nobkd/nuxt-web-theme/tree/main/components/content/
+-   https://typography.nuxt.space/#prose-components
+-   https://elements.nuxt.space/globals/alert/
+-   https://github.com/nobkd/nuxt-web-theme/tree/main/components/content/
