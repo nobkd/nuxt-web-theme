@@ -8,7 +8,7 @@
                 <BarNav />
             </section>
             <section class="right">
-                <BarNavSide />
+                <LazyBarNavSide />
             </section>
         </div>
     </header>
