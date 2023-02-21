@@ -1,10 +1,8 @@
 import { defineTheme, palette } from 'pinceau';
 
-const primary = palette('#00DC82');
-
 export default defineTheme({
     color: {
-        primary: primary,
+        primary: palette('#00DC82'),
     },
     prose: {
         h1: {
