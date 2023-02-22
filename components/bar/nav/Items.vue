@@ -10,7 +10,7 @@ defineProps({
     },
 });
 
-const route = useRoute()
+const route = useRoute();
 const header = queryContent().where({ header: { $not: false } });
 </script>
 
@@ -18,7 +18,8 @@ const header = queryContent().where({ header: { $not: false } });
     <ContentNavigation v-slot="{ navigation }" :query="header">
         <ul :side="isSide">
             <li v-for="link of navigation" :key="link._path">
-                <NuxtLink :active="route.path.startsWith(link._path + '/')"
+                <NuxtLink
+                    :active="route.path.startsWith(link._path + '/')"
                     :to="link._path"
                     @click="
                         linkClick();

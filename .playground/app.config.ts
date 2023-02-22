@@ -1,5 +1,5 @@
 export default defineAppConfig({
     nuxtWebTheme: {
-      name: 'Nuxt Web Theme Playground'
-    }
-  })
+        name: 'Nuxt Web Theme Playground',
+    },
+});
